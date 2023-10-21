@@ -1,0 +1,6 @@
+name: "Check Files Action"
+description: "Checks if README.md and LIC files exist in a directory"
+runs:
+  using: "node12"
+  main: "index.js"
+
