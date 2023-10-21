@@ -17,7 +17,6 @@ async function checkFileExists(filePath) {
 (  async() => {
         try{
             core.notice("Calling our action");
-            core.message("Calling my action");
             checkFileExists("README.md");
             checkFileExists("LICENSE");
         }
