@@ -1,15 +1,29 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const fs = require('fs');
 
-{
-    async() => {
+async function checkFileExists(filePath) {
+    return fs.promises.access(filePath)
+    .then(() => {
+        core.info(`File ${filePath} exists`);
+        return true;
+    })
+    .catch(() => {
+        core.setFailed(`File ${filePath} does not exist`);
+        return false;
+    });
+}
+
+(  async() => {
         try{
             core.notice("Calling our action");
             core.message("Calling my action");
+            checkFileExists("README.md");
+            checkFileExists("LICENSE");
         }
         
         catch(error){
             core.setFailed(error.message);
         }
     }
-}
+)();
