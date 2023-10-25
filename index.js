@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const { Octokit } = require("octokit");
+const { Octokit } = require("@octokit/rest");
 const fs = require('fs');
 
 async function checkFileExists(filePath) {
