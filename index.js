@@ -19,11 +19,11 @@ async function checkFileStartsWithHeader(filePath){
     .then(fileContent => {
         // remove all spaces at the beginning of the file
         fileContent = fileContent.replace(/^\s*\n/gm, '');
-        if (fileContent.startWith('#')){
+        if (fileContent.startsWith('#')){
             core.info('File ${filePath} starts with a header');
             return true;            
         } else{
-          core.setFailed('File ${filePath}  does not start with a header' );
+          core.setFailed('File ${filePath} does not start with a header' );
             return false;
         }
     });
