@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const { Octokit } = require("octokit");
 const fs = require('fs');
 
 async function checkFileExists(filePath) {
@@ -39,7 +40,8 @@ async function checkFileStartsWithHeader(filePath){
             ){
                 //get token for octokit
                 const token = core.getInput('repo-token');
-                const octokit = new github.getOctokit(token);
+               // const octokit = new github.getOctokit(token);
+                const octokit = new Octokit({ auth: token });
 
                 // call octokit to create a check with annotation and details
                 const check = await octokit.checks.create({
