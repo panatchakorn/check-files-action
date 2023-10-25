@@ -58,7 +58,7 @@ async function checkFileStartsWithHeader(filePath){
                                 start_line: 1,
                                 end_line: 1,
                                 annotation_level: 'failure',
-                                message: 'READEME.md does not start with a header'
+                                message: 'READEME.md does not start with a header',
                                 start_column:1,
                                 end_column:1
                             }
