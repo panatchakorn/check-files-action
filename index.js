@@ -35,7 +35,7 @@ async function checkFileStartsWithHeader(filePath){
             checkFileExists("README.md");
             checkFileExists("LICENSE");
             if (
-                ! await checkFileStartsWithHeader("REAMME.md")
+                ! await checkFileStartsWithHeader("README.md")
             ){
                 //get token for octokit
                 const token = core.getInput('repo-token');
