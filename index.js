@@ -18,7 +18,7 @@ async function checkFileStartsWithHeader(filePath){
     return fs.promises.readFile(filePath,'utf8')
     .then(fileContent => {
         // remove all spaces at the beginning of the file
-        fileContent = fileContent.replace( ^\s*\n gm, '');
+        fileContent = fileContent.replace(/^\s*\n/gm, '');
         if (fileContent.startWith('#')){
             core.info('File ${filePath} starts with a header');
             return true;            
