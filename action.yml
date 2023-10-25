@@ -3,4 +3,10 @@ description: "Checks if README.md and LIC files exist in a directory"
 runs:
   using: "node20"
   main: "index.js"
+inputs:
+  repo-token:
+    type: string
+    description: "Github token"
+    required: true
+    default: ${{github.token}}
 
